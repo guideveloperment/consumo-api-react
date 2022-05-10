@@ -20,6 +20,7 @@ function Produto(props) {
         })
     }, [])
 
+    
     return(
         <>
         <ProdutoItem produto={produto}/>

@@ -1,12 +1,13 @@
+import React from "react";
 import { Link } from 'react-router-dom'
 
-function ListaProdutos(props) {
+ export default function ListaProdutos(props) {
 
     const produtos = props.produtos || []
 
     return (
         <>
-            <h2>{props.titulo}</h2>
+            <h1>Lista de Produtos</h1>
             {
                 produtos.map(item => {
                     return (
@@ -25,4 +26,3 @@ function ListaProdutos(props) {
     )
 }
 
-export default ListaProdutos

@@ -7,6 +7,20 @@ function Home() {
 
     const [ofertas, setOfertas] = useState([])
     const [maisVendidos, setMaisVendidos] = useState([])
+    const [produtos, setProdutos] = useState([])
+
+
+    useEffect(() => {
+        axios.get('http://localhost:8080/produtos/')
+            .then((response)=> {
+                setProdutos(response.data)
+            })
+            .catch((err)=> {
+                console.error("Ops! ocorreu um erro" + err)
+            })
+
+
+    }, [])
 
     useEffect(() => {
         axios.get(`${baseAPI}/ofertas`)
@@ -32,6 +46,7 @@ function Home() {
             <h1>Home</h1>
             <ListaProdutos titulo="Ofertas" produtos={ofertas}/>
             <ListaProdutos titulo="Mais Vendidos" produtos={maisVendidos}/>
+            <ListaProdutos produtos={produtos}/>
         </>
     )
 }

@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function ProdutoItem(props) {
+ export default function ProdutoItem(props) {
 
-    const produto = props.produto || {}
+    const produto = props.produto || []
 
     return(
         <>
-        <h1>{produto.nome}</h1>
+        <h1>Produto</h1>
         <div>
             <div><img width="450" src={produto.imgUrl} /></div>
             <h2>{produto.id} - {produto.nome} - R${produto.preco}</h2>
@@ -17,5 +17,3 @@ function ProdutoItem(props) {
         </>
     )
 }
-
-export default ProdutoItem
